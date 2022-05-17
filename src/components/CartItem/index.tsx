@@ -23,11 +23,11 @@ export const CartItem = ({
       <Content>
         <img src={imageUrl} alt={name} />
 
-        <div>
+        <section>
           <p className="name">{name}</p>
           <p className="price">R$ {price}</p>
           <p className="selling-price">R$ {sellingPrice}</p>
-        </div>
+        </section>
       </Content>
 
       <button onClick={() => handleRemoveFromCart()}>

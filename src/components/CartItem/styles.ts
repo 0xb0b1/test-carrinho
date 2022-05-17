@@ -2,7 +2,9 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   display: flex;
+  align-items: center;
   justify-content: space-between;
+  width: 100%;
 
   button {
     border: none;
@@ -13,11 +15,8 @@ export const Container = styled.div`
 export const Content = styled.div`
   display: flex;
   align-items: center;
-  gap: 1rem;
-  /* margin: 0 1rem; */
-
-  /* height: 120px; */
-  /* height: 100%; */
+  gap: 0.45rem;
+  width: 100%;
 
   img {
     border: 2px solid #d3d3d3;
@@ -31,9 +30,9 @@ export const Content = styled.div`
     object-fit: cover;
   }
 
-  div {
+  section {
     display: flex;
-    flex-direction: column;
+    gap: 0.25rem;
 
     .name {
       font-weight: 700;
@@ -46,7 +45,7 @@ export const Content = styled.div`
     }
 
     .selling-price {
-      font-weight: 500;
+      font-weight: 700;
       font-size: 14px;
       color: black;
     }
