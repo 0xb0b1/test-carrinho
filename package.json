@@ -1,0 +1,31 @@
+{
+  "name": "teste-carrinho",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "server": "json-server server/products.json -p 3333"
+  },
+  "dependencies": {
+    "axios": "^0.27.2",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-icons": "^4.3.1",
+    "react-router-dom": "6",
+    "react-toastify": "^9.0.1",
+    "styled-components": "^5.3.5"
+  },
+  "devDependencies": {
+    "@types/axios": "^0.14.0",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "@types/react-icons": "^3.0.0",
+    "@types/styled-components": "^5.1.25",
+    "@vitejs/plugin-react": "^1.3.0",
+    "json-server": "^0.17.0",
+    "typescript": "^4.6.3",
+    "vite": "^2.9.9"
+  }
+}
