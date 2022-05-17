@@ -7,7 +7,7 @@ export const Container = styled.div`
   width: 100%;
 
   &:not(:last-child) {
-    border-bottom: 1px solid #d3d3d3;
+    border-bottom: 2px solid #d3d3d3;
   }
 
   button {
@@ -31,6 +31,8 @@ export const Content = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+
+  height: 120px;
 
   width: 100%;
 
@@ -57,8 +59,8 @@ export const Content = styled.div`
   }
 
   img {
-    max-height: 120px;
-    max-width: 120px;
+    max-height: 80px;
+    max-width: 80px;
     height: 100%;
     width: 100%;
     object-fit: cover;

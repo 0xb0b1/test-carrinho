@@ -13,7 +13,7 @@ export const Container = styled.div`
     align-items: center;
     justify-content: center;
 
-    height: 60px;
+    height: 80px;
 
     /* height: 100%; */
 
@@ -24,8 +24,8 @@ export const Container = styled.div`
 `;
 
 export const ItemsContent = styled.div`
-  border-top: 1px solid #d3d3d3;
-  border-bottom: 1px solid #d3d3d3;
+  border-top: 2px solid #d3d3d3;
+  border-bottom: 2px solid #d3d3d3;
 
   section {
     margin: 1rem;
@@ -43,7 +43,7 @@ export const Totalizer = styled.div`
 
   padding: 1rem 0;
 
-  border-bottom: 1px solid #d3d3d3;
+  border-bottom: 2px solid #d3d3d3;
 
   .total {
     display: flex;

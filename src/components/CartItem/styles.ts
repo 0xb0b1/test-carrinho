@@ -16,15 +16,15 @@ export const Content = styled.div`
   gap: 1rem;
   /* margin: 0 1rem; */
 
-  max-height: 80px;
-  height: 100%;
+  /* height: 120px; */
+  /* height: 100%; */
 
   img {
-    border: 1px solid #d3d3d3;
+    border: 2px solid #d3d3d3;
     border-radius: 0.1rem;
 
-    max-height: 80px;
-    max-width: 80px;
+    max-height: 120px;
+    max-width: 120px;
     height: 100%;
     width: 100%;
 
