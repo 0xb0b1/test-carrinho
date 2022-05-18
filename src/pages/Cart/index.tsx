@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { CartItem } from "../../components/CartItem";
-import { api } from "../../services/api";
+import { useCart } from "../../hooks/useCart";
 import { formatCurrency } from "../../utils/formatCurrency";
 import {
   Container,
@@ -22,30 +22,28 @@ interface TotalProps {
 }
 
 export const Cart = () => {
+  const { cart, removeProduct } = useCart();
   const [products, setProducts] = useState<ItemsProps[]>();
   const [freeShipping, setFreeShipping] = useState(false);
   const [total, setTotal] = useState(0);
 
-  useEffect(() => {
-    const loadProducts = async () => {
-      const response = await api.get("/items");
-
-      setProducts(response.data);
-    };
-
-    loadProducts();
-  }, []);
+  console.log("cart", cart);
 
   useEffect(() => {
-    const totalizer = products?.reduce((sumTotal, product) => {
+    const totalizer = cart?.reduce((sumTotal, product) => {
       return sumTotal + product.sellingPrice;
     }, 0);
 
-    if (Number(totalizer) >= 1000) {
-      setFreeShipping(true);
+    console.log("total", totalizer);
+
+    if (totalizer <= 1000) {
+      setFreeShipping(false);
+      setTotal(Number(totalizer));
+      return;
     }
+    setFreeShipping(true);
     setTotal(Number(totalizer));
-  }, [products]);
+  }, [cart]);
 
   console.log(products);
 
@@ -57,9 +55,10 @@ export const Cart = () => {
 
       <ItemsContent>
         <section>
-          {products?.map((item) => (
+          {cart?.map((item) => (
             <CartItem
               key={item.id}
+              id={item.id}
               name={item.name}
               imageUrl={item.imageUrl}
               price={item.price}
