@@ -1,3 +1,4 @@
+import { useCart } from "../../hooks/useCart";
 import { Container, Content } from "./styles";
 
 interface ProductProps {
@@ -5,6 +6,9 @@ interface ProductProps {
   price: number;
   sellingPrice: number;
   imageUrl: string;
+  id: number;
+  addProductToCart: (productId: number) => void;
+  removeFromCart: (productId: number) => void;
 }
 
 export const Product = ({
@@ -12,7 +16,12 @@ export const Product = ({
   price,
   sellingPrice,
   imageUrl,
+  id,
+  addProductToCart,
+  removeFromCart,
 }: ProductProps) => {
+  const { productAlreadyInCart } = useCart();
+
   return (
     <Container>
       <Content>
@@ -23,8 +32,15 @@ export const Product = ({
           <span className="selling-price">R$ {sellingPrice}</span>
         </section>
       </Content>
-
-      <button>Adicionar</button>
+      {productAlreadyInCart(id) ? (
+        <button className="product-remove" onClick={() => removeFromCart(id)}>
+          Remover
+        </button>
+      ) : (
+        <button className="product-add" onClick={() => addProductToCart(id)}>
+          Adicionar
+        </button>
+      )}
     </Container>
   );
 };

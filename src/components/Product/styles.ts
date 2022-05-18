@@ -1,3 +1,4 @@
+import { darken } from "polished";
 import styled from "styled-components";
 
 export const Container = styled.div`
@@ -10,19 +11,37 @@ export const Container = styled.div`
     border-bottom: 2px solid #d3d3d3;
   }
 
-  button {
-    border: none;
-    border-radius: 0.25rem;
+  .product-add,
+  .product-remove {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 120px;
+    height: 40px;
+    border-radius: 1.25rem;
+    border: 0;
     padding: 0.67rem;
-    background-color: #327aff;
-    color: white;
     font-weight: 700;
 
-    transition: 0.2s;
+    color: #fff;
+    overflow: hidden;
+
+    transition: background 0.2s;
 
     &:hover {
       filter: brightness(0.8);
     }
+  }
+
+  .product-add {
+    background-color: #327aff;
+    color: white;
+  }
+
+  .product-remove {
+    background-color: #d33033;
+    color: white;
   }
 `;
 
