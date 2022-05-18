@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { useCart } from "../../hooks/useCart";
 import { formatCurrency } from "../../utils/formatCurrency";
 import { Container, Content } from "./styles";

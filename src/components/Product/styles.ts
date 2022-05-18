@@ -70,13 +70,13 @@ export const Content = styled.div`
 
     .price {
       font-weight: 500;
-      font-size: 12px;
+      font-size: 14px;
       color: gray;
     }
 
     .selling-price {
       font-weight: 500;
-      font-size: 14px;
+      font-size: 18px;
       color: black;
     }
   }
