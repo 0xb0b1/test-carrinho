@@ -1,4 +1,4 @@
-# Ignews 💛🚀
+# Teste Carrinho :shopping_cart:
 
 &nbsp;
 
@@ -8,6 +8,15 @@
 ## 📚 Sobre o projeto
 
 * Esse projeto foi desenvolvido para testar minhas habilidades técnicas em um teste de Frontend.
+
+&nbsp;
+
+## Sobre a solução
+
+	Além do carrinho, eu criei uma listagem de produtos. Assim o usuário consegue adicionar os produtos ao carrinho.
+ 	Eu decidi criar uma fake-api com 7 produtos, assim consigo criar uma listagem de produtos e adicionar no carrinho de forma dinâmica.
+	Consigo calcular o total, que pode ser menor ou maior que 10, e então mostrando a mensagem de frete grátis.
+	
 
 &nbsp;
 
@@ -57,7 +66,7 @@ $ yarn dev
 
 &nbsp;
 
-## Atenção!
+## :warning: Atenção!
 
 #### Devido ao uso da fake-api, é preciso rodar o projeto local para conseguir consumir os dados
 
