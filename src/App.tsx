@@ -28,6 +28,7 @@ function App() {
           pauseOnFocusLoss
           draggable
           pauseOnHover
+          theme="colored"
         />
       </CartProvider>
     </BrowserRouter>
