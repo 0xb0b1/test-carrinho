@@ -61,6 +61,11 @@ export const Content = styled.div`
 
     .name {
       font-weight: 700;
+      font-size: 14px;
+
+      @media (max-width: 720px) {
+        font-size: 12px;
+      }
     }
 
     .price {
@@ -79,8 +84,8 @@ export const Content = styled.div`
   img {
     max-height: 80px;
     max-width: 80px;
-    height: 100%;
-    width: 100%;
+    /* height: 100%; */
+    /* width: 100%; */
     object-fit: cover;
 
     border-radius: 1rem;
