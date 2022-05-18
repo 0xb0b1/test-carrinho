@@ -68,8 +68,7 @@ $ yarn dev
 
 ## :warning: Atenção!
 
-#### Devido ao uso da fake-api, é preciso rodar o projeto local para conseguir consumir os dados
+	Devido ao uso da fake-api, é preciso rodar o projeto local para conseguir consumir os dados
 
-[teste-carrinho]()
 
 &nbsp;
