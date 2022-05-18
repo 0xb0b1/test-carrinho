@@ -29,7 +29,7 @@ export const CartItem = ({
       <Content>
         <img src={imageUrl} alt={name} />
 
-        <section>
+        <section className="product-details">
           <p className="name">{name}</p>
           <p className="price">R$ {formatCurrency(price)}</p>
           <p className="selling-price">R$ {formatCurrency(sellingPrice)}</p>

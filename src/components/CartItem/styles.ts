@@ -30,11 +30,10 @@ export const Content = styled.div`
     object-fit: cover;
   }
 
-  section {
+  .product-details {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    gap: 0.25rem;
 
     .name {
       font-weight: 700;

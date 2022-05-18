@@ -33,7 +33,7 @@ export const ItemsContent = styled.div`
 
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 0.45rem;
   }
 `;
 
