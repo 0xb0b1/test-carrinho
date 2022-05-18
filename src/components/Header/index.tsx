@@ -18,7 +18,7 @@ export const Header = () => {
             {cartSize === 1 ? `${cartSize} item` : `${cartSize} items`}
           </span>
         </div>
-        <FiShoppingCart size={36} color="#333" />
+        <FiShoppingCart size={36} color="#f1f3f1" />
       </Cart>
     </Container>
   );

@@ -21,8 +21,8 @@ export default createGlobalStyle`
 	}
 
 	body {
-		/* background: #191920 url(${background}) no-repeat center top; */
-		background: #D3D3D3;
+		background: #D3D3D3 url(${background}) no-repeat center top;
+		/* background: #D3D3D3; */
 		-webkit-font-smoothing: antialiased;
 	}
 

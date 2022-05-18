@@ -36,6 +36,7 @@ export const Content = styled.div`
 
     .name {
       font-weight: 700;
+      font-size: 0.95rem;
     }
 
     .price {

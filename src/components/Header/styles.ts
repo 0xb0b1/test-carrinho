@@ -15,7 +15,7 @@ export const Container = styled.header`
     span {
       font-size: 2rem;
       font-weight: 700;
-      color: #333;
+      color: #fff;
     }
 
     &:hover {
@@ -34,12 +34,12 @@ export const Cart = styled(Link)`
 
     strong {
       display: block;
-      color: #333;
+      color: #f5f5f5;
     }
 
     span {
       font-size: 12px;
-      color: #555;
+      color: #f1f1f1;
     }
   }
 `;
