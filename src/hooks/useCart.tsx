@@ -21,6 +21,16 @@ interface CartContextData {
   productAlreadyInCart: (productId: number) => boolean;
 }
 
+var toastConfig: any = {
+  position: "top-right",
+  autoClose: 2000,
+  hideProgressBar: false,
+  closeOnClick: true,
+  pauseOnHover: true,
+  draggable: true,
+  progress: undefined,
+};
+
 const CartContext = createContext<CartContextData>({} as CartContextData);
 
 export const CartProvider = ({ children }: CartProviderProps) => {
@@ -62,25 +72,9 @@ export const CartProvider = ({ children }: CartProviderProps) => {
         "@testeCart:cart",
         JSON.stringify([...cart, { ...product }])
       );
-      toast.success("Adicionado", {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-      });
+      toast.success("Adicionado", toastConfig);
     } catch {
-      toast.error("Erro ao adicionar o produto", {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-      });
+      toast.error("Erro ao adicionar o produto", toastConfig);
     }
   };
 
@@ -91,15 +85,7 @@ export const CartProvider = ({ children }: CartProviderProps) => {
       );
 
       if (!productExists) {
-        toast.error("Erro ao remover produto", {
-          position: "top-right",
-          autoClose: 5000,
-          hideProgressBar: true,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-        });
+        toast.error("Erro ao remover produto", toastConfig);
         return;
       }
 
@@ -109,15 +95,7 @@ export const CartProvider = ({ children }: CartProviderProps) => {
 
       setCart(updatedCart);
       localStorage.setItem("@testeCart:cart", JSON.stringify(updatedCart));
-      toast.warning("Removido", {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-      });
+      toast.warning("Removido", toastConfig);
     } catch {}
   };
 
