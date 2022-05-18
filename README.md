@@ -16,7 +16,8 @@
 * Além do carrinho, eu criei uma listagem de produtos. Assim o usuário consegue adicionar os produtos ao carrinho.
 * Eu decidi criar uma fake-api com 7 produtos, assim consigo criar uma listagem de produtos e adicionar no carrinho de forma dinâmica.
 * Consigo calcular o total, que pode ser menor ou maior que 10, e então mostrando a mensagem de frete grátis.
-	
+* Assim que o usuário adicionar ao carrinho, os produtos serão salvos no localStorage.
+
 
 &nbsp;
 
@@ -34,10 +35,11 @@
 
 ## 🛠️ Tecnologias/Ferramentas ultilizadas
 
-* [React](https://reactjs.org)
+* [ReactJS](https://reactjs.org)
+* [react-router@v6](https://reactrouter.com)
 * [styled-components](https://styled-components.com)
-* [typescript](https://www.typescriptlang.org)
-* [JsonServer](https://github.com/typicode/json-server)
+* [TypeScript](https://www.typescriptlang.org)
+* [json-server](https://github.com/typicode/json-server)
 * [ViteJS](https://vitejs.dev)
 
 &nbsp;
