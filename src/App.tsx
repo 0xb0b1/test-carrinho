@@ -18,7 +18,17 @@ function App() {
           <Route path="/cart" element={<Cart />} />
         </Routes>
 
-        <ToastContainer autoClose={2000} />
+        <ToastContainer
+          position="top-right"
+          autoClose={2000}
+          hideProgressBar
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+        />
       </CartProvider>
     </BrowserRouter>
   );

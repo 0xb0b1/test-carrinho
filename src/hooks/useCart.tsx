@@ -51,6 +51,7 @@ export const CartProvider = ({ children }: CartProviderProps) => {
 
       if (productAlreadyInCart) {
         toast("Produto já adicionado ao carrinho!");
+
         return;
       }
 
@@ -61,9 +62,25 @@ export const CartProvider = ({ children }: CartProviderProps) => {
         "@testeCart:cart",
         JSON.stringify([...cart, { ...product }])
       );
-      toast("Adicionado");
+      toast.success("Adicionado", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
     } catch {
-      toast.error("Erro ao adicionar o produto");
+      toast.error("Erro ao adicionar o produto", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
     }
   };
 
@@ -74,7 +91,15 @@ export const CartProvider = ({ children }: CartProviderProps) => {
       );
 
       if (!productExists) {
-        toast.error("Erro ao remover produto");
+        toast.error("Erro ao remover produto", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: true,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
         return;
       }
 
@@ -84,7 +109,15 @@ export const CartProvider = ({ children }: CartProviderProps) => {
 
       setCart(updatedCart);
       localStorage.setItem("@testeCart:cart", JSON.stringify(updatedCart));
-      toast("Removido");
+      toast.warning("Removido", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
     } catch {}
   };
 
