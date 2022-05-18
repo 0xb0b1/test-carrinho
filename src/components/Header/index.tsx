@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
 import { Cart, Container } from "./styles";
 import { FiShoppingCart } from "react-icons/fi";
+import { useCart } from "../../hooks/useCart";
 
 export const Header = () => {
-  const cart = [1, 2, 3, 4, 5, 6, 7];
+  const { cart } = useCart();
   const cartSize = cart.length;
   return (
     <Container>
