@@ -13,9 +13,9 @@
 
 ## Sobre a solução
 
-	Além do carrinho, eu criei uma listagem de produtos. Assim o usuário consegue adicionar os produtos ao carrinho.
- 	Eu decidi criar uma fake-api com 7 produtos, assim consigo criar uma listagem de produtos e adicionar no carrinho de forma dinâmica.
-	Consigo calcular o total, que pode ser menor ou maior que 10, e então mostrando a mensagem de frete grátis.
+* Além do carrinho, eu criei uma listagem de produtos. Assim o usuário consegue adicionar os produtos ao carrinho.
+* Eu decidi criar uma fake-api com 7 produtos, assim consigo criar uma listagem de produtos e adicionar no carrinho de forma dinâmica.
+* Consigo calcular o total, que pode ser menor ou maior que 10, e então mostrando a mensagem de frete grátis.
 	
 
 &nbsp;
