@@ -1,6 +1,7 @@
 import { createContext, ReactNode, useContext, useState } from "react";
 import { toast } from "react-toastify";
 import { api } from "../services/api";
+import { toastConfig } from "../config/toast";
 
 interface CartProviderProps {
   children: ReactNode;
@@ -20,16 +21,6 @@ interface CartContextData {
   removeProduct: (productId: number) => void;
   productAlreadyInCart: (productId: number) => boolean;
 }
-
-var toastConfig: any = {
-  position: "top-right",
-  autoClose: 2000,
-  hideProgressBar: false,
-  closeOnClick: true,
-  pauseOnHover: true,
-  draggable: true,
-  progress: undefined,
-};
 
 const CartContext = createContext<CartContextData>({} as CartContextData);
 
