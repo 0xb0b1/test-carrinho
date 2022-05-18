@@ -1,17 +1,19 @@
 import { useEffect, useState } from "react";
 import { Product } from "../../components/Product";
+import { useCart } from "../../hooks/useCart";
 import { api } from "../../services/api";
 import { Container, Content } from "./styles";
 
 interface ProductsProps {
   name: string;
-  id: string;
+  id: number;
   price: number;
   sellingPrice: number;
   imageUrl: string;
 }
 
 export const ProductListing = () => {
+  const { addProduct, removeProduct } = useCart();
   const [products, setProducts] = useState<ProductsProps[]>();
 
   useEffect(() => {
@@ -30,13 +32,18 @@ export const ProductListing = () => {
     <Container>
       <Content>
         {products?.map((product) => (
-          <Product
-            key={product.id}
-            name={product.name}
-            price={product.price}
-            sellingPrice={product.sellingPrice}
-            imageUrl={product.imageUrl}
-          />
+          <>
+            <Product
+              key={product.id}
+              id={product.id}
+              name={product.name}
+              price={product.price}
+              sellingPrice={product.sellingPrice}
+              imageUrl={product.imageUrl}
+              addProductToCart={addProduct}
+              removeFromCart={removeProduct}
+            />
+          </>
         ))}
       </Content>
     </Container>
