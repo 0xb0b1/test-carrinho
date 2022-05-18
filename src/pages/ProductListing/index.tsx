@@ -26,24 +26,20 @@ export const ProductListing = () => {
     loadProducts();
   }, []);
 
-  console.log(products);
-
   return (
     <Container>
       <Content>
         {products?.map((product) => (
-          <>
-            <Product
-              key={product.id}
-              id={product.id}
-              name={product.name}
-              price={product.price}
-              sellingPrice={product.sellingPrice}
-              imageUrl={product.imageUrl}
-              addProductToCart={addProduct}
-              removeFromCart={removeProduct}
-            />
-          </>
+          <Product
+            key={product.id}
+            id={product.id}
+            name={product.name}
+            price={product.price}
+            sellingPrice={product.sellingPrice}
+            imageUrl={product.imageUrl}
+            addProductToCart={addProduct}
+            removeFromCart={removeProduct}
+          />
         ))}
       </Content>
     </Container>
