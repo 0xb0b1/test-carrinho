@@ -41,14 +41,14 @@ export const Content = styled.div`
     }
 
     .price {
-      font-weight: 500;
-      font-size: 12px;
-      color: gray;
+      font-weight: normal;
+      font-size: 14px;
+      color: #706d6d;
     }
 
     .selling-price {
-      font-weight: 700;
-      font-size: 14px;
+      font-weight: 500;
+      font-size: 18px;
       color: black;
     }
   }
