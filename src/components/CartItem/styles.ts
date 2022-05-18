@@ -32,6 +32,8 @@ export const Content = styled.div`
 
   section {
     display: flex;
+    justify-content: center;
+    flex-direction: column;
     gap: 0.25rem;
 
     .name {

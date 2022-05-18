@@ -1,9 +1,11 @@
 import { FiTrash } from "react-icons/fi";
+import { useCart } from "../../hooks/useCart";
 import { formatCurrency } from "../../utils/formatCurrency";
 import { Container, Content } from "./styles";
 
 interface CartItemProps {
   name: string;
+  id: number;
   price: number;
   sellingPrice: number;
   imageUrl: string;
@@ -12,11 +14,14 @@ interface CartItemProps {
 export const CartItem = ({
   name,
   price,
+  id,
   sellingPrice,
   imageUrl,
 }: CartItemProps) => {
-  const handleRemoveFromCart = () => {
-    console.log("removed");
+  const { removeProduct } = useCart();
+
+  const handleRemoveFromCart = (productId: number) => {
+    removeProduct(productId);
   };
 
   return (
@@ -31,7 +36,7 @@ export const CartItem = ({
         </section>
       </Content>
 
-      <button onClick={() => handleRemoveFromCart()}>
+      <button onClick={() => handleRemoveFromCart(id)}>
         <FiTrash size={22} color="#000" />
       </button>
     </Container>
