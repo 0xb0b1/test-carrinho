@@ -1,4 +1,5 @@
 import { useCart } from "../../hooks/useCart";
+import { formatCurrency } from "../../utils/formatCurrency";
 import { Container, Content } from "./styles";
 
 interface ProductProps {
@@ -28,8 +29,10 @@ export const Product = ({
         <img src={imageUrl} alt={name} />
         <section>
           <span className="name">{name}</span>
-          <span className="price">R$ {price}</span>
-          <span className="selling-price">R$ {sellingPrice}</span>
+          <span className="price">R$ {formatCurrency(price)}</span>
+          <span className="selling-price">
+            R$ {formatCurrency(sellingPrice)}
+          </span>
         </section>
       </Content>
       {productAlreadyInCart(id) ? (
