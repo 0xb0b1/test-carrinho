@@ -36,8 +36,9 @@ export const CartItem = ({
         </section>
       </Content>
 
-      <button onClick={() => handleRemoveFromCart(id)}>
-        <FiTrash size={22} color="#000" />
+      <button type="button" onClick={() => handleRemoveFromCart(id)}>
+        <FiTrash size={18} color="white" />
+        <span>Remover</span>
       </button>
     </Container>
   );
