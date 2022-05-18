@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { CartItem } from "../../components/CartItem";
 import { api } from "../../services/api";
+import { formatCurrency } from "../../utils/formatCurrency";
 import {
   Container,
   ItemsContent,
@@ -16,15 +17,14 @@ interface ItemsProps {
   imageUrl: string;
 }
 
+interface TotalProps {
+  total: number | undefined;
+}
+
 export const Cart = () => {
   const [products, setProducts] = useState<ItemsProps[]>();
   const [freeShipping, setFreeShipping] = useState(false);
-
-  useEffect(() => {
-    setTimeout(() => {
-      setFreeShipping(!freeShipping);
-    }, 3000);
-  }, []);
+  const [total, setTotal] = useState(0);
 
   useEffect(() => {
     const loadProducts = async () => {
@@ -35,6 +35,18 @@ export const Cart = () => {
 
     loadProducts();
   }, []);
+
+  useEffect(() => {
+    const totalizer = products?.reduce((sumTotal, product) => {
+      return sumTotal + product.sellingPrice;
+    }, 0);
+
+    if (totalizer >= 1000) {
+      setFreeShipping(true);
+    }
+    setTotal(totalizer);
+    console.log(totalizer);
+  }, [products]);
 
   console.log(products);
 
@@ -61,7 +73,7 @@ export const Cart = () => {
       <Totalizer>
         <div className="total">
           <span>Total</span>
-          <span>R$ 9,55</span>
+          <span>R$ {formatCurrency(total)}</span>
         </div>
         {freeShipping && (
           <div className="free-shipping">

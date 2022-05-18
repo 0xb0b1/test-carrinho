@@ -1,4 +1,5 @@
 import { FiTrash } from "react-icons/fi";
+import { formatCurrency } from "../../utils/formatCurrency";
 import { Container, Content } from "./styles";
 
 interface CartItemProps {
@@ -25,8 +26,8 @@ export const CartItem = ({
 
         <section>
           <p className="name">{name}</p>
-          <p className="price">R$ {price}</p>
-          <p className="selling-price">R$ {sellingPrice}</p>
+          <p className="price">R$ {formatCurrency(price)}</p>
+          <p className="selling-price">R$ {formatCurrency(sellingPrice)}</p>
         </section>
       </Content>
 
