@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { darken } from "polished";
 
 export const Container = styled.div`
   background-color: #f3f3f3;
@@ -63,12 +64,15 @@ export const Totalizer = styled.div`
     align-self: center;
     min-height: 1.25rem;
     border-radius: 2rem;
-    background-color: rgba(165, 231, 171, 0.8);
+    /* background-color: rgba(165, 231, 171, 0.8); */
+    background-color: rgba(158, 234, 112, 0.8);
+    /* background-color: #2dd75d; */
 
     padding: 0.45rem 1rem;
 
     span {
-      color: #4a9650;
+      /* color: #229e22; */
+      color: ${darken(0.1, "#36A936")};
       font-weight: 500;
       font-size: 1rem;
     }

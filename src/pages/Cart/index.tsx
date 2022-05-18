@@ -72,7 +72,7 @@ export const Cart = () => {
       <Totalizer>
         <div className="total">
           <span>Total</span>
-          <span>R$ {formatCurrency(total)}</span>
+          <span>R$ {total ? formatCurrency(total) : 0}</span>
         </div>
         {freeShipping && (
           <div className="free-shipping">
