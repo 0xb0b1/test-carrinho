@@ -10,7 +10,7 @@ import {
 } from "./styles";
 
 export const Cart = () => {
-  const { cart, removeProduct } = useCart();
+  const { cart } = useCart();
   const [freeShipping, setFreeShipping] = useState(false);
   const [total, setTotal] = useState(0);
 
