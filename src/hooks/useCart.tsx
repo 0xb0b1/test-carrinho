@@ -18,6 +18,7 @@ interface CartContextData {
   cart: Product[];
   addProduct: (productId: number) => Promise<void>;
   removeProduct: (productId: number) => void;
+  productAlreadyInCart: (productId: number) => boolean;
 }
 
 const CartContext = createContext<CartContextData>({} as CartContextData);
@@ -33,7 +34,14 @@ export const CartProvider = ({ children }: CartProviderProps) => {
     return [];
   });
 
-  const [alreadyInCart, setAlreadyInCart] = useState({});
+  // const [alreadyInCart, setAlreadyInCart] = useState();
+
+  const productAlreadyInCart = (productId: number) => {
+    if (cart.find((product) => product.id === productId)) {
+      return true;
+    }
+    return false;
+  };
 
   const addProduct = async (productId: number) => {
     try {
@@ -81,7 +89,9 @@ export const CartProvider = ({ children }: CartProviderProps) => {
   };
 
   return (
-    <CartContext.Provider value={{ cart, addProduct, removeProduct }}>
+    <CartContext.Provider
+      value={{ cart, addProduct, removeProduct, productAlreadyInCart }}
+    >
       {children}
     </CartContext.Provider>
   );
