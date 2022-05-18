@@ -41,11 +41,10 @@ export const Cart = () => {
       return sumTotal + product.sellingPrice;
     }, 0);
 
-    if (totalizer >= 1000) {
+    if (Number(totalizer) >= 1000) {
       setFreeShipping(true);
     }
-    setTotal(totalizer);
-    console.log(totalizer);
+    setTotal(Number(totalizer));
   }, [products]);
 
   console.log(products);
