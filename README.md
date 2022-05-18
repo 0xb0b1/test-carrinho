@@ -7,13 +7,13 @@
 
 ## 📚 Sobre o projeto
 
-* Esse projeto foi desenvolvido para testar minhas habilidades tecnicas em uma teste de Frontend.
+* Esse projeto foi desenvolvido para testar minhas habilidades técnicas em um teste de Frontend.
 
 &nbsp;
 
 ## 💻 Oque tem no projeto?
 
-* Uso de ReactJs para criar UI.
+* Uso de ReactJs para criação de UI.
 * Uso de TypeScript para tipagem.
 * Uso de React Hooks & Contexto para gerenciamento de estado.
 * Consumindo uma API Fake com Json Server
@@ -57,8 +57,9 @@ $ yarn dev
 
 &nbsp;
 
-### 🔗 Link para o projeto online
+## Atenção!
 
+#### Devido ao uso da fake-api, é preciso rodar o projeto local para conseguir consumir os dados
 
 [teste-carrinho]()
 
