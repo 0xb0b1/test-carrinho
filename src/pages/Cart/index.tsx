@@ -9,32 +9,15 @@ import {
   Totalizer,
 } from "./styles";
 
-interface ItemsProps {
-  name: string;
-  id: string;
-  price: number;
-  sellingPrice: number;
-  imageUrl: string;
-}
-
-interface TotalProps {
-  total: number | undefined;
-}
-
 export const Cart = () => {
   const { cart, removeProduct } = useCart();
-  const [products, setProducts] = useState<ItemsProps[]>();
   const [freeShipping, setFreeShipping] = useState(false);
   const [total, setTotal] = useState(0);
-
-  console.log("cart", cart);
 
   useEffect(() => {
     const totalizer = cart?.reduce((sumTotal, product) => {
       return sumTotal + product.sellingPrice;
     }, 0);
-
-    console.log("total", totalizer);
 
     if (totalizer <= 1000) {
       setFreeShipping(false);
@@ -44,8 +27,6 @@ export const Cart = () => {
     setFreeShipping(true);
     setTotal(Number(totalizer));
   }, [cart]);
-
-  console.log(products);
 
   return (
     <Container>
