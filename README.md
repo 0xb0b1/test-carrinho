@@ -7,7 +7,7 @@
 
 ## 📚 Sobre o projeto
 
-* Esse projeto foi desenvolvido para testar minhas habilidades técnicas em um teste de Frontend.
+* Um simples eCommerce com duas rotas, uma para listagem de produtos e outra para listagem de produtos no carrinho.
 
 &nbsp;
 
