@@ -1,5 +1,5 @@
 export const toastConfig: any = {
-  position: "top-right",
+  position: "top-left",
   autoClose: 2000,
   hideProgressBar: false,
   closeOnClick: true,

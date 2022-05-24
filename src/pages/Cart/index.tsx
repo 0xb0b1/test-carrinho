@@ -13,7 +13,7 @@ export const Cart = () => {
   const { cart } = useCart();
 
   const total = useMemo(() => {
-    return cart?.reduce((sumTotal, product) => {
+    return cart.reduce((sumTotal, product) => {
       return sumTotal + product.sellingPrice;
     }, 0);
   }, [cart]);
