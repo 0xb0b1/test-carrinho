@@ -31,8 +31,8 @@ export const CartItem = ({
 
         <section className="product-details">
           <p className="name">{name}</p>
-          <p className="price">R$ {formatCurrency(price)}</p>
-          <p className="selling-price">R$ {formatCurrency(sellingPrice)}</p>
+          <p className="price">{formatCurrency(price)}</p>
+          <p className="selling-price">{formatCurrency(sellingPrice)}</p>
         </section>
       </Content>
 

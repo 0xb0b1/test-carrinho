@@ -84,6 +84,8 @@ export const Content = styled.div`
   img {
     max-height: 80px;
     max-width: 80px;
+    height: 100%;
+    width: 100%;
 
     border-radius: 1rem;
 

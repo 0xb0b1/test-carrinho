@@ -21,6 +21,7 @@ export const ProductListing = () => {
       const response = await api.get("/items");
 
       setProducts(response.data);
+      console.log(response);
     };
 
     loadProducts();
