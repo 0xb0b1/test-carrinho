@@ -10,15 +10,11 @@ import {
 } from "./styles";
 
 export const Cart = () => {
-  const { cart } = useCart();
+  const { cart, totalPrice } = useCart();
 
-  const total = useMemo(() => {
-    return cart.reduce((sumTotal, product) => {
-      return sumTotal + product.sellingPrice;
-    }, 0);
-  }, [cart]);
+  const formatedPrice = formatCurrency(totalPrice);
 
-  const freeShipping = total >= 1000 ? true : false;
+  const freeShipping = totalPrice >= 1000 ? true : false;
 
   return (
     <Container>
@@ -44,7 +40,7 @@ export const Cart = () => {
       <Totalizer>
         <div className="total">
           <span>Total</span>
-          <span>{total ? formatCurrency(total) : 0}</span>
+          <span>{formatedPrice}</span>
         </div>
         {freeShipping && (
           <div className="free-shipping">

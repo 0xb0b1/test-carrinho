@@ -24,14 +24,17 @@ export const Product = ({
 }: ProductProps) => {
   const { productAlreadyInCart } = useCart();
 
+  const formatedPrice = formatCurrency(price);
+  const formatedSellingPrice = formatCurrency(sellingPrice);
+
   return (
     <Container>
       <Content>
         <img src={imageUrl} alt={name} />
         <section>
           <span className="name">{name}</span>
-          <span className="price">{formatCurrency(price)}</span>
-          <span className="selling-price">{formatCurrency(sellingPrice)}</span>
+          <span className="price">{formatedPrice}</span>
+          <span className="selling-price">{formatedSellingPrice}</span>
         </section>
       </Content>
       {productAlreadyInCart(id) ? (

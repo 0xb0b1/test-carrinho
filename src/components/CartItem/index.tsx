@@ -24,6 +24,9 @@ export const CartItem = ({
     removeProduct(productId);
   };
 
+  const formatedPrice = formatCurrency(price);
+  const formatedSellingPrice = formatCurrency(sellingPrice);
+
   return (
     <Container>
       <Content>
@@ -31,8 +34,8 @@ export const CartItem = ({
 
         <section className="product-details">
           <p className="name">{name}</p>
-          <p className="price">{formatCurrency(price)}</p>
-          <p className="selling-price">{formatCurrency(sellingPrice)}</p>
+          <p className="price">{formatedPrice}</p>
+          <p className="selling-price">{formatedSellingPrice}</p>
         </section>
       </Content>
 
