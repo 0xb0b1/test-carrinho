@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { CartItem } from "../../components/CartItem";
 import { useCart } from "../../hooks/useCart";
 import { formatCurrency } from "../../utils/formatCurrency";
@@ -11,22 +11,14 @@ import {
 
 export const Cart = () => {
   const { cart } = useCart();
-  const [freeShipping, setFreeShipping] = useState(false);
-  const [total, setTotal] = useState(0);
 
-  useEffect(() => {
-    const totalizer = cart?.reduce((sumTotal, product) => {
+  const total = useMemo(() => {
+    return cart?.reduce((sumTotal, product) => {
       return sumTotal + product.sellingPrice;
     }, 0);
-
-    if (totalizer <= 1000) {
-      setFreeShipping(false);
-      setTotal(Number(totalizer));
-      return;
-    }
-    setFreeShipping(true);
-    setTotal(Number(totalizer));
   }, [cart]);
+
+  const freeShipping = total >= 1000 ? true : false;
 
   return (
     <Container>
