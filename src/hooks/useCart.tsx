@@ -1,4 +1,10 @@
-import { createContext, ReactNode, useContext, useState } from "react";
+import {
+  createContext,
+  ReactNode,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
 import { toast } from "react-toastify";
 import { api } from "../services/api";
 import { toastConfig } from "../config/toast";
@@ -17,6 +23,7 @@ interface Product {
 
 interface CartContextData {
   cart: Product[];
+  totalPrice: number;
   addProduct: (productId: number) => Promise<void>;
   removeProduct: (productId: number) => void;
   productAlreadyInCart: (productId: number) => boolean;
@@ -34,6 +41,16 @@ export const CartProvider = ({ children }: CartProviderProps) => {
 
     return [];
   });
+
+  const [totalPrice, setTotalPrice] = useState(0);
+
+  useEffect(() => {
+    const total = cart?.reduce((sumTotal, product) => {
+      return sumTotal + product.sellingPrice;
+    }, 0);
+
+    setTotalPrice(total);
+  }, [cart]);
 
   // const [alreadyInCart, setAlreadyInCart] = useState();
 
@@ -94,7 +111,13 @@ export const CartProvider = ({ children }: CartProviderProps) => {
 
   return (
     <CartContext.Provider
-      value={{ cart, addProduct, removeProduct, productAlreadyInCart }}
+      value={{
+        cart,
+        totalPrice,
+        addProduct,
+        removeProduct,
+        productAlreadyInCart,
+      }}
     >
       {children}
     </CartContext.Provider>
