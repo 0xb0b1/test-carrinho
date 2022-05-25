@@ -1,4 +1,3 @@
-import { FiTrash } from "react-icons/fi";
 import { useCart } from "../../hooks/useCart";
 import { formatCurrency } from "../../utils/formatCurrency";
 import { Container, Content } from "./styles";
@@ -40,7 +39,6 @@ export const CartItem = ({
       </Content>
 
       <button type="button" onClick={() => handleRemoveFromCart(id)}>
-        <FiTrash size={18} color="white" />
         <span>Remover</span>
       </button>
     </Container>
