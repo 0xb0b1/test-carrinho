@@ -1,13 +1,8 @@
-import { useEffect, useMemo, useState } from "react";
 import { CartItem } from "../../components/CartItem";
+import { CartTotalizer } from "../../components/CartTotalizer";
 import { useCart } from "../../hooks/useCart";
 import { formatCurrency } from "../../utils/formatCurrency";
-import {
-  Container,
-  ItemsContent,
-  OrderConfirmation,
-  Totalizer,
-} from "./styles";
+import { Container, ItemsContent, OrderConfirmation } from "./styles";
 
 export const Cart = () => {
   const { cart, totalPrice } = useCart();
@@ -37,17 +32,10 @@ export const Cart = () => {
         </section>
       </ItemsContent>
 
-      <Totalizer>
-        <div className="total">
-          <span>Total</span>
-          <span>{formatedPrice}</span>
-        </div>
-        {freeShipping && (
-          <div className="free-shipping">
-            <span>Parabéns, sua compra tem frete grátis!</span>
-          </div>
-        )}
-      </Totalizer>
+      <CartTotalizer
+        formatedPrice={formatedPrice}
+        freeShipping={freeShipping}
+      />
 
       <OrderConfirmation>
         <button>Finalizar compra</button>
