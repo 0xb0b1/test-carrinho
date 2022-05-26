@@ -7,7 +7,7 @@ import { Container, ItemsContent, OrderConfirmation } from "./styles";
 export const Cart = () => {
   const { cart, totalPrice } = useCart();
 
-  const formatedPrice = formatCurrency(totalPrice);
+  const formattedPrice = formatCurrency(totalPrice);
 
   const freeShipping = totalPrice >= 1000 ? true : false;
 
@@ -33,7 +33,7 @@ export const Cart = () => {
       </ItemsContent>
 
       <CartTotalizer
-        formatedPrice={formatedPrice}
+        formattedPrice={formattedPrice}
         freeShipping={freeShipping}
       />
 

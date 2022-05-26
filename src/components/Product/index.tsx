@@ -1,4 +1,3 @@
-import { memo } from "react";
 import { useCart } from "../../hooks/useCart";
 import { formatCurrency } from "../../utils/formatCurrency";
 import { Container, Content } from "./styles";
@@ -24,8 +23,8 @@ export const Product = ({
 }: ProductProps) => {
   const { productAlreadyInCart } = useCart();
 
-  const formatedPrice = formatCurrency(price);
-  const formatedSellingPrice = formatCurrency(sellingPrice);
+  const formattedPrice = formatCurrency(price);
+  const formattedSellingPrice = formatCurrency(sellingPrice);
 
   return (
     <Container>
@@ -33,8 +32,8 @@ export const Product = ({
         <img src={imageUrl} alt={name} />
         <section>
           <span className="name">{name}</span>
-          <span className="price">{formatedPrice}</span>
-          <span className="selling-price">{formatedSellingPrice}</span>
+          <span className="price">{formattedPrice}</span>
+          <span className="selling-price">{formattedSellingPrice}</span>
         </section>
       </Content>
       {productAlreadyInCart(id) ? (

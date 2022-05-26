@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Cart, Container } from "./styles";
 import { useCart } from "../../hooks/useCart";
-import shoppingCart from "../../assets/cart.svg";
+// import shoppingCart from "../../assets/cart.svg";
 
 export const Header = () => {
   const { cart } = useCart();

@@ -1,19 +1,19 @@
 import { Totalizer } from "./styles";
 
 interface TotalizerProps {
-  formatedPrice: string;
+  formattedPrice: string;
   freeShipping: boolean;
 }
 
 export const CartTotalizer = ({
-  formatedPrice,
+  formattedPrice: formattedPrice,
   freeShipping,
 }: TotalizerProps) => {
   return (
     <Totalizer>
       <div className="total">
         <span>Total</span>
-        <span>{formatedPrice}</span>
+        <span>{formattedPrice}</span>
       </div>
       {freeShipping && (
         <div className="free-shipping">
