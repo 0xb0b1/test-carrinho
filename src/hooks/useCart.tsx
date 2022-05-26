@@ -48,7 +48,7 @@ export const CartProvider = ({ children }: CartProviderProps) => {
 
   useEffect(() => {
     const total = cart?.reduce((sumTotal, product) => {
-      return sumTotal + product.sellingPrice;
+      return sumTotal + product.sellingPrice * product.quantity;
     }, 0);
 
     setTotalPrice(total);

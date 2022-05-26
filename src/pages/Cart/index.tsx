@@ -27,6 +27,7 @@ export const Cart = () => {
               imageUrl={item.imageUrl}
               price={item.price}
               sellingPrice={item.sellingPrice}
+              quantity={item.quantity}
             />
           ))}
         </section>

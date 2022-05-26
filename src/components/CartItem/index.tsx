@@ -8,6 +8,7 @@ interface CartItemProps {
   price: number;
   sellingPrice: number;
   imageUrl: string;
+  quantity: number;
 }
 
 export const CartItem = ({
@@ -16,6 +17,7 @@ export const CartItem = ({
   id,
   sellingPrice,
   imageUrl,
+  quantity,
 }: CartItemProps) => {
   const { removeProduct } = useCart();
 
@@ -23,8 +25,8 @@ export const CartItem = ({
     removeProduct(productId);
   };
 
-  const formattedPrice = formatCurrency(price);
-  const formattedSellingPrice = formatCurrency(sellingPrice);
+  const formattedPrice = formatCurrency(price * quantity);
+  const formattedSellingPrice = formatCurrency(sellingPrice * quantity);
 
   return (
     <Container>
