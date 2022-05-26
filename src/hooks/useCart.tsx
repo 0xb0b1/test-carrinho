@@ -15,10 +15,9 @@ interface CartProviderProps {
 
 interface Product {
   id: number;
-  name: string;
+  title: string;
   price: number;
-  sellingPrice: number;
-  imageUrl: string;
+  image: string;
   quantity: number;
 }
 
@@ -48,7 +47,7 @@ export const CartProvider = ({ children }: CartProviderProps) => {
 
   useEffect(() => {
     const total = cart?.reduce((sumTotal, product) => {
-      return sumTotal + product.sellingPrice * product.quantity;
+      return sumTotal + product.price * product.quantity;
     }, 0);
 
     setTotalPrice(total);

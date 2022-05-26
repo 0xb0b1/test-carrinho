@@ -5,11 +5,10 @@ import { api } from "../../services/api";
 import { Container, Content } from "./styles";
 
 interface ProductsProps {
-  name: string;
+  title: string;
   id: number;
   price: number;
-  sellingPrice: number;
-  imageUrl: string;
+  image: string;
 }
 
 export const ProductListing = () => {
@@ -34,10 +33,9 @@ export const ProductListing = () => {
           <Product
             key={product.id}
             id={product.id}
-            name={product.name}
+            title={product.title}
             price={product.price}
-            sellingPrice={product.sellingPrice}
-            imageUrl={product.imageUrl}
+            image={product.image}
             addProductToCart={addProduct}
             removeFromCart={removeProduct}
           />

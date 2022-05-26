@@ -6,7 +6,7 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "server": "json-server -w server/products.json -p 3333"
+    "server": "json-server -w server/fake-store.json -p 3333"
   },
   "dependencies": {
     "axios": "^0.27.2",

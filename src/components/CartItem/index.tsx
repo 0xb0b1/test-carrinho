@@ -4,20 +4,18 @@ import { ProductQuantity } from "../ProductQuantity";
 import { Container, Content } from "./styles";
 
 interface CartItemProps {
-  name: string;
+  title: string;
   id: number;
   price: number;
-  sellingPrice: number;
-  imageUrl: string;
+  image: string;
   quantity: number;
 }
 
 export const CartItem = ({
-  name,
+  title,
   price,
   id,
-  sellingPrice,
-  imageUrl,
+  image,
   quantity,
 }: CartItemProps) => {
   const { removeProduct, addProduct } = useCart();
@@ -26,16 +24,16 @@ export const CartItem = ({
     removeProduct(productId);
   };
 
-  const formattedPrice = formatCurrency(sellingPrice);
-  const totalProductPrice = formatCurrency(sellingPrice * quantity);
+  const formattedPrice = formatCurrency(price);
+  const totalProductPrice = formatCurrency(price * quantity);
 
   return (
     <Container>
       <Content>
-        <img src={imageUrl} alt={name} />
+        <img src={image} alt={title} />
 
         <section className="product-details">
-          <p className="name">{name}</p>
+          <p className="name">{title}</p>
           <p className="price">{formattedPrice}</p>
           <p className="selling-price">{totalProductPrice}</p>
         </section>

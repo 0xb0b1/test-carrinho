@@ -9,7 +9,7 @@ export const Cart = () => {
 
   const formattedPrice = formatCurrency(totalPrice);
 
-  const freeShipping = totalPrice >= 1000 ? true : false;
+  const freeShipping = totalPrice >= 500 ? true : false;
 
   return (
     <Container>
@@ -23,10 +23,9 @@ export const Cart = () => {
             <CartItem
               key={item.id}
               id={item.id}
-              name={item.name}
-              imageUrl={item.imageUrl}
+              title={item.title}
+              image={item.image}
               price={item.price}
-              sellingPrice={item.sellingPrice}
               quantity={item.quantity}
             />
           ))}

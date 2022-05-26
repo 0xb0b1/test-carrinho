@@ -5,35 +5,33 @@ import { ProductQuantity } from "../ProductQuantity";
 import { Container, Content } from "./styles";
 
 interface ProductProps {
-  name: string;
+  title: string;
   price: number;
-  sellingPrice: number;
-  imageUrl: string;
+  image: string;
   id: number;
   addProductToCart: (productId: number) => void;
   removeFromCart: (productId: number) => void;
 }
 
 export const Product = ({
-  name,
+  title,
   price,
-  sellingPrice,
-  imageUrl,
+  image,
   id,
   addProductToCart,
   removeFromCart,
 }: ProductProps) => {
   const formattedPrice = formatCurrency(price);
-  const formattedSellingPrice = formatCurrency(sellingPrice);
 
   return (
     <Container>
       <Content>
-        <img src={imageUrl} alt={name} />
+        <section className="image">
+          <img src={image} alt={title} />
+        </section>
         <section>
-          <span className="name">{name}</span>
+          <span className="name">{title}</span>
           <span className="price">{formattedPrice}</span>
-          <span className="selling-price">{formattedSellingPrice}</span>
         </section>
       </Content>
 

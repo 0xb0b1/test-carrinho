@@ -6,6 +6,8 @@ export const Container = styled.div`
   justify-content: space-between;
   width: 100%;
 
+  padding: 0.45rem;
+
   &:not(:last-child) {
     border-bottom: 2px solid #d3d3d3;
   }
@@ -15,8 +17,6 @@ export const Content = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-
-  height: 120px;
 
   width: 100%;
 
@@ -47,14 +47,19 @@ export const Content = styled.div`
     }
   }
 
-  img {
-    max-height: 120px;
-    max-width: 100px;
+  .image {
+    max-width: 140px;
+    width: 100%;
+    height: 100%;
 
-    border-radius: 1rem;
+    img {
+      max-width: 120px;
 
-    &:hover {
-      transform: scale(1.2);
+      border-radius: 1rem;
+
+      &:hover {
+        transform: scale(1.2);
+      }
     }
   }
 `;
