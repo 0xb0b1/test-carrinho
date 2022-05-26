@@ -36,7 +36,7 @@ export default createGlobalStyle`
 		padding: 0 20px 50px;
 	}
 
-	button {
+	button, svg {
 		cursor: pointer;
 	}
 `;
