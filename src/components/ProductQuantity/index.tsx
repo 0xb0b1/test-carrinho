@@ -22,9 +22,9 @@ export const ProductQuantity = ({
     return (
       <Button>
         <div className="input-quantity">
-          <label htmlFor="quantity">
+          <label htmlFor={String(id)}>
             <input
-              id="quantity"
+              id={String(id)}
               type="number"
               min="1"
               value={productQuantity}
