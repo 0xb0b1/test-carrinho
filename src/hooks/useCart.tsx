@@ -75,10 +75,10 @@ export const CartProvider = ({ children }: CartProviderProps) => {
 
       const { data: product } = await api.get(`/items/${productId}`);
 
-      setCart([...cart, { ...product }]);
+      setCart([...cart, { ...product, quantity: 1 }]);
       localStorage.setItem(
         "@testeCart:cart",
-        JSON.stringify([...cart, { ...product }])
+        JSON.stringify([...cart, { ...product, quantity: 1 }])
       );
       toast.success("Adicionado", toastConfig);
     } catch {
