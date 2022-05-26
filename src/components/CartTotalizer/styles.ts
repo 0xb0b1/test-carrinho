@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { darken } from "polished";
 
 export const Totalizer = styled.div`
   display: flex;
@@ -33,8 +32,7 @@ export const Totalizer = styled.div`
     padding: 0.45rem 1rem;
 
     span {
-      /* color: #229e22; */
-      color: ${darken(0.3, "#36A936")};
+      color: #237723;
       font-weight: 500;
       font-size: 1rem;
     }
