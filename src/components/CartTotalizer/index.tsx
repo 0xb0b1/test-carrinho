@@ -6,7 +6,7 @@ interface TotalizerProps {
 }
 
 export const CartTotalizer = ({
-  formattedPrice: formattedPrice,
+  formattedPrice,
   freeShipping,
 }: TotalizerProps) => {
   return (
