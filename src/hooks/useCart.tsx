@@ -105,7 +105,7 @@ export const CartProvider = ({ children }: CartProviderProps) => {
       localStorage.setItem("@testeCart:cart", JSON.stringify(updatedCart));
       toast.warning("Removido", toastConfig);
     } catch {
-      toast.warning("Erro ao removir produto do carrinho!", toastConfig);
+      toast.warning("Erro ao remover produto do carrinho!", toastConfig);
     }
   };
 
