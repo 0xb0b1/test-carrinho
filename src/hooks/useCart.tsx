@@ -72,6 +72,7 @@ export const CartProvider = ({ children }: CartProviderProps) => {
 
     setCart(updatedCart);
     localStorage.setItem("@testeCart:cart", JSON.stringify(updatedCart));
+    toast.success("Quantidade alterada", toastConfig);
     return;
   };
 
@@ -94,7 +95,7 @@ export const CartProvider = ({ children }: CartProviderProps) => {
         "@testeCart:cart",
         JSON.stringify([...cart, { ...product, quantity: 1 }])
       );
-      // toast.success("Adicionado", toastConfig);
+      toast.success("Adicionado", toastConfig);
     } catch {
       toast.error("Erro ao adicionar o produto", toastConfig);
     }
@@ -117,7 +118,7 @@ export const CartProvider = ({ children }: CartProviderProps) => {
 
       setCart(updatedCart);
       localStorage.setItem("@testeCart:cart", JSON.stringify(updatedCart));
-      // toast.warning("Removido", toastConfig);
+      toast.warning("Removido", toastConfig);
     } catch {
       toast.warning("Erro ao remover produto do carrinho!", toastConfig);
     }
