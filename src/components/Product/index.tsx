@@ -1,5 +1,7 @@
+import { useState } from "react";
 import { useCart } from "../../hooks/useCart";
 import { formatCurrency } from "../../utils/formatCurrency";
+import { ProductQuantity } from "../ProductQuantity";
 import { Container, Content } from "./styles";
 
 interface ProductProps {
@@ -21,8 +23,6 @@ export const Product = ({
   addProductToCart,
   removeFromCart,
 }: ProductProps) => {
-  const { productAlreadyInCart } = useCart();
-
   const formattedPrice = formatCurrency(price);
   const formattedSellingPrice = formatCurrency(sellingPrice);
 
@@ -36,15 +36,12 @@ export const Product = ({
           <span className="selling-price">{formattedSellingPrice}</span>
         </section>
       </Content>
-      {productAlreadyInCart(id) ? (
-        <button className="product-remove" onClick={() => removeFromCart(id)}>
-          Remover
-        </button>
-      ) : (
-        <button className="product-add" onClick={() => addProductToCart(id)}>
-          Adicionar
-        </button>
-      )}
+
+      <ProductQuantity
+        removeProductFromCart={removeFromCart}
+        addProductToCart={addProductToCart}
+        id={id}
+      />
     </Container>
   );
 };

@@ -19,6 +19,7 @@ interface Product {
   price: number;
   sellingPrice: number;
   imageUrl: string;
+  quantity: number;
 }
 
 interface CartContextData {
@@ -27,6 +28,7 @@ interface CartContextData {
   addProduct: (productId: number) => Promise<void>;
   removeProduct: (productId: number) => void;
   productAlreadyInCart: (productId: number) => boolean;
+  updateProductQuantity: (productId: number, quantity: number) => void;
 }
 
 const CartContext = createContext<CartContextData>({} as CartContextData);
@@ -52,13 +54,26 @@ export const CartProvider = ({ children }: CartProviderProps) => {
     setTotalPrice(total);
   }, [cart]);
 
-  // const [alreadyInCart, setAlreadyInCart] = useState();
-
   const productAlreadyInCart = (productId: number) => {
     if (cart.find((product) => product.id === productId)) {
       return true;
     }
     return false;
+  };
+
+  const updateProductQuantity = (productId: number, newQuantity: number) => {
+    const updatedCart = cart.map((cartProduct) =>
+      cartProduct.id === productId
+        ? {
+            ...cartProduct,
+            quantity: Number(newQuantity),
+          }
+        : cartProduct
+    );
+
+    setCart(updatedCart);
+    localStorage.setItem("@testeCart:cart", JSON.stringify(updatedCart));
+    return;
   };
 
   const addProduct = async (productId: number) => {
@@ -80,7 +95,7 @@ export const CartProvider = ({ children }: CartProviderProps) => {
         "@testeCart:cart",
         JSON.stringify([...cart, { ...product, quantity: 1 }])
       );
-      toast.success("Adicionado", toastConfig);
+      // toast.success("Adicionado", toastConfig);
     } catch {
       toast.error("Erro ao adicionar o produto", toastConfig);
     }
@@ -103,7 +118,7 @@ export const CartProvider = ({ children }: CartProviderProps) => {
 
       setCart(updatedCart);
       localStorage.setItem("@testeCart:cart", JSON.stringify(updatedCart));
-      toast.warning("Removido", toastConfig);
+      // toast.warning("Removido", toastConfig);
     } catch {
       toast.warning("Erro ao remover produto do carrinho!", toastConfig);
     }
@@ -117,6 +132,7 @@ export const CartProvider = ({ children }: CartProviderProps) => {
         addProduct,
         removeProduct,
         productAlreadyInCart,
+        updateProductQuantity,
       }}
     >
       {children}
