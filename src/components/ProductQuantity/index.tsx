@@ -45,6 +45,9 @@ export const ProductQuantity = ({
     );
   }
 
+  // here the function `addProductToCart` is optional, so
+  // we only show this section of code when we pass the function
+  // in the component.
   return (
     <Button>
       <button className="product-add" onClick={() => addProductToCart(id)}>

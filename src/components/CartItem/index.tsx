@@ -1,5 +1,6 @@
 import { useCart } from "../../hooks/useCart";
 import { formatCurrency } from "../../utils/formatCurrency";
+import { ProductQuantity } from "../ProductQuantity";
 import { Container, Content } from "./styles";
 
 interface CartItemProps {
@@ -19,14 +20,14 @@ export const CartItem = ({
   imageUrl,
   quantity,
 }: CartItemProps) => {
-  const { removeProduct } = useCart();
+  const { removeProduct, addProduct } = useCart();
 
   const handleRemoveFromCart = (productId: number) => {
     removeProduct(productId);
   };
 
-  const formattedPrice = formatCurrency(price * quantity);
-  const formattedSellingPrice = formatCurrency(sellingPrice * quantity);
+  const formattedPrice = formatCurrency(sellingPrice);
+  const totalProductPrice = formatCurrency(sellingPrice * quantity);
 
   return (
     <Container>
@@ -36,13 +37,15 @@ export const CartItem = ({
         <section className="product-details">
           <p className="name">{name}</p>
           <p className="price">{formattedPrice}</p>
-          <p className="selling-price">{formattedSellingPrice}</p>
+          <p className="selling-price">{totalProductPrice}</p>
         </section>
       </Content>
 
-      <button type="button" onClick={() => handleRemoveFromCart(id)}>
-        <span>Remover</span>
-      </button>
+      <ProductQuantity
+        removeProductFromCart={handleRemoveFromCart}
+        id={id}
+        addProductToCart={addProduct}
+      />
     </Container>
   );
 };
