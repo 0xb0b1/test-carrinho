@@ -87,6 +87,11 @@ export const CartProvider = ({ children }: CartProviderProps) => {
     }
 
     if (action === "increment") {
+      if (productQuantity === 10) {
+        toast.error("Stock máximo atingido!", toastConfig);
+        return;
+      }
+
       const updatedCart = cart.map((cartProduct) =>
         cartProduct.id === productId
           ? { ...cartProduct, quantity: cartProduct.quantity + 1 }
