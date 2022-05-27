@@ -28,6 +28,7 @@ interface CartContextData {
   removeProduct: (productId: number) => void;
   productAlreadyInCart: (productId: number) => boolean;
   updateProductQuantity: (productId: number, quantity: number) => void;
+  handleQuantity: (productId: number, action: string) => void;
 }
 
 const CartContext = createContext<CartContextData>({} as CartContextData);
@@ -60,7 +61,49 @@ export const CartProvider = ({ children }: CartProviderProps) => {
     return false;
   };
 
+  const handleQuantity = (productId: number, action: string) => {
+    const productQuantity = cart.find(
+      (product) => product.id === productId
+    )?.quantity;
+
+    if (action === "decrement") {
+      if (productQuantity === 1) {
+        toast.error("Erro ao alterar quantidade", toastConfig);
+        return;
+      }
+
+      const updatedCart = cart.map((cartProduct) =>
+        cartProduct.id === productId
+          ? {
+              ...cartProduct,
+              quantity: cartProduct.quantity - 1,
+            }
+          : cartProduct
+      );
+      setCart(updatedCart);
+      localStorage.setItem("@testeCart:cart", JSON.stringify(updatedCart));
+      toast.success("Quantidade alterada", toastConfig);
+      return;
+    }
+
+    if (action === "increment") {
+      const updatedCart = cart.map((cartProduct) =>
+        cartProduct.id === productId
+          ? { ...cartProduct, quantity: cartProduct.quantity + 1 }
+          : cartProduct
+      );
+      setCart(updatedCart);
+      localStorage.setItem("@testeCart:cart", JSON.stringify(updatedCart));
+      toast.success("Quantidade alterada", toastConfig);
+      return;
+    }
+  };
+
   const updateProductQuantity = (productId: number, newQuantity: number) => {
+    const productQuantity = cart.find(
+      (product) => product.id === productId
+    )?.quantity;
+
     const updatedCart = cart.map((cartProduct) =>
       cartProduct.id === productId
         ? {
@@ -133,6 +176,7 @@ export const CartProvider = ({ children }: CartProviderProps) => {
         removeProduct,
         productAlreadyInCart,
         updateProductQuantity,
+        handleQuantity,
       }}
     >
       {children}
