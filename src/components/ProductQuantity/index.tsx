@@ -1,7 +1,6 @@
 import { useCart } from "../../hooks/useCart";
 import { Button } from "./styles";
 import { FiTrash } from "react-icons/fi";
-import { useState } from "react";
 
 interface ProductQuantityProps {
   id: number;
