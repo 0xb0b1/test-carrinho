@@ -6,6 +6,8 @@ export const Container = styled.div`
   justify-content: space-between;
   width: 100%;
 
+  height: 200px;
+
   padding: 0.45rem;
 
   &:not(:last-child) {
@@ -58,7 +60,7 @@ export const Content = styled.div`
       border-radius: 1rem;
 
       &:hover {
-        transform: scale(1.2);
+        transform: scale(1.05);
       }
     }
   }
