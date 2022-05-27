@@ -30,7 +30,9 @@ export const CartItem = ({
   return (
     <Container>
       <Content>
-        <img src={image} alt={title} />
+        <section className="image">
+          <img src={image} alt={title} />
+        </section>
 
         <section className="product-details">
           <p className="name">{title}</p>
@@ -39,11 +41,7 @@ export const CartItem = ({
         </section>
       </Content>
 
-      <ProductQuantity
-        removeProductFromCart={handleRemoveFromCart}
-        id={id}
-        addProductToCart={addProduct}
-      />
+      <ProductQuantity id={id} />
     </Container>
   );
 };

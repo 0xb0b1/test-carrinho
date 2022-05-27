@@ -29,11 +29,6 @@ export const Container = styled.div`
     &:hover {
       filter: brightness(0.8);
     }
-
-    span {
-      font-weight: 700;
-      font-size: 12px;
-    }
   }
 `;
 
@@ -43,16 +38,22 @@ export const Content = styled.div`
   gap: 0.45rem;
   width: 100%;
 
-  img {
-    border: 2px solid #d3d3d3;
-    border-radius: 0.1rem;
+  .image {
+    max-width: 80px;
 
-    max-height: 120px;
-    max-width: 120px;
-    height: 100%;
-    width: 100%;
+    img {
+      max-width: 80px;
+      width: auto;
+      height: auto;
+      object-fit: cover;
 
-    object-fit: cover;
+      border: 1px solid #d3d3d3;
+      border-radius: 1rem;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
   }
 
   .product-details {
