@@ -14,7 +14,8 @@ export const ProductQuantity = ({
   removeProductFromCart,
   id,
 }: ProductQuantityProps) => {
-  const { cart, productAlreadyInCart, updateProductQuantity } = useCart();
+  const { cart, productAlreadyInCart, updateProductQuantity, handleQuantity } =
+    useCart();
 
   const productQuantity = cart.find((item) => item.id === id)?.quantity;
 
@@ -23,6 +24,12 @@ export const ProductQuantity = ({
       <Button>
         <div className="input-quantity">
           <label htmlFor={String(id)}>
+            <button
+              onClick={() => handleQuantity(id, "decrement")}
+              type="button"
+            >
+              <span className="decrement">-</span>
+            </button>
             <input
               id={String(id)}
               type="number"
@@ -32,6 +39,12 @@ export const ProductQuantity = ({
                 updateProductQuantity(id, Number(event.target.value));
               }}
             />
+            <button
+              onClick={() => handleQuantity(id, "increment")}
+              type="button"
+            >
+              <span className="increment">+</span>
+            </button>
           </label>
           <span>
             <FiTrash

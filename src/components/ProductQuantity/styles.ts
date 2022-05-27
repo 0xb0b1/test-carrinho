@@ -29,17 +29,29 @@ export const Button = styled.div`
   }
 
   .input-quantity {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 120px;
-
+    /* margin: 0 auto; */
     label {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 120px;
+
+      button {
+        border: 0;
+        background: none;
+      }
+
+      .decrement,
+      .increment {
+        font-size: 1.25rem;
+      }
+
       input {
         width: 80px;
         border-radius: 0.45rem;
         padding: 0.45rem 1.25rem;
         border: 1px solid #d3d3d3;
+        text-align: center;
       }
     }
   }
