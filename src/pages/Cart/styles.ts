@@ -2,8 +2,6 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   background-color: #f5f5f5;
-  max-width: 720px;
-  margin: 0 auto;
 
   border-radius: 0.5rem;
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
