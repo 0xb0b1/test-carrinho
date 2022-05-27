@@ -4,18 +4,18 @@ import { FiTrash } from "react-icons/fi";
 import { useState } from "react";
 
 interface ProductQuantityProps {
-  addProductToCart: (id: number) => void;
-  removeProductFromCart: (id: number) => void;
   id: number;
 }
 
-export const ProductQuantity = ({
-  addProductToCart,
-  removeProductFromCart,
-  id,
-}: ProductQuantityProps) => {
-  const { cart, productAlreadyInCart, updateProductQuantity, handleQuantity } =
-    useCart();
+export const ProductQuantity = ({ id }: ProductQuantityProps) => {
+  const {
+    cart,
+    addProduct,
+    removeProduct,
+    productAlreadyInCart,
+    updateProductQuantity,
+    handleQuantity,
+  } = useCart();
 
   const productQuantity = cart.find((item) => item.id === id)?.quantity;
 
@@ -47,23 +47,16 @@ export const ProductQuantity = ({
             </button>
           </label>
           <span>
-            <FiTrash
-              onClick={() => removeProductFromCart(id)}
-              color="#000"
-              size={20}
-            />
+            <FiTrash onClick={() => removeProduct(id)} color="#000" size={20} />
           </span>
         </div>
       </Button>
     );
   }
 
-  // here the function `addProductToCart` is optional, so
-  // we only show this section of code when we pass the function
-  // in the component.
   return (
     <Button>
-      <button className="product-add" onClick={() => addProductToCart(id)}>
+      <button className="product-add" onClick={() => addProduct(id)}>
         Adicionar
       </button>
     </Button>

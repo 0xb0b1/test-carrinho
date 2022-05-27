@@ -44,6 +44,7 @@ export const Button = styled.div`
       .decrement,
       .increment {
         font-size: 1.25rem;
+        color: #111;
       }
 
       input {
