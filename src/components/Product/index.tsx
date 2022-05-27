@@ -35,11 +35,7 @@ export const Product = ({
         </section>
       </Content>
 
-      <ProductQuantity
-        removeProductFromCart={removeFromCart}
-        addProductToCart={addProductToCart}
-        id={id}
-      />
+      <ProductQuantity id={id} />
     </Container>
   );
 };
