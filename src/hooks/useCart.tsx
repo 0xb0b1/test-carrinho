@@ -100,10 +100,6 @@ export const CartProvider = ({ children }: CartProviderProps) => {
   };
 
   const updateProductQuantity = (productId: number, newQuantity: number) => {
-    const productQuantity = cart.find(
-      (product) => product.id === productId
-    )?.quantity;
-
     const updatedCart = cart.map((cartProduct) =>
       cartProduct.id === productId
         ? {

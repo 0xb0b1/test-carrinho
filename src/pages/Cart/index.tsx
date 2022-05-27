@@ -1,15 +1,10 @@
 import { CartItem } from "../../components/CartItem";
 import { CartTotalizer } from "../../components/CartTotalizer";
 import { useCart } from "../../hooks/useCart";
-import { formatCurrency } from "../../utils/formatCurrency";
 import { Container, ItemsContent, OrderConfirmation } from "./styles";
 
 export const Cart = () => {
-  const { cart, totalPrice } = useCart();
-
-  const formattedPrice = formatCurrency(totalPrice);
-
-  const freeShipping = totalPrice >= 500 ? true : false;
+  const { cart } = useCart();
 
   return (
     <Container>
@@ -32,10 +27,7 @@ export const Cart = () => {
         </section>
       </ItemsContent>
 
-      <CartTotalizer
-        formattedPrice={formattedPrice}
-        freeShipping={freeShipping}
-      />
+      <CartTotalizer />
 
       <OrderConfirmation>
         <button>Finalizar compra</button>

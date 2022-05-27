@@ -1,14 +1,13 @@
+import { useCart } from "../../hooks/useCart";
+import { formatCurrency } from "../../utils/formatCurrency";
 import { Totalizer } from "./styles";
 
-interface TotalizerProps {
-  formattedPrice: string;
-  freeShipping: boolean;
-}
+export const CartTotalizer = () => {
+  const { totalPrice } = useCart();
+  const formattedPrice = formatCurrency(totalPrice);
 
-export const CartTotalizer = ({
-  formattedPrice,
-  freeShipping,
-}: TotalizerProps) => {
+  const freeShipping = totalPrice >= 500 ? true : false;
+
   return (
     <Totalizer>
       <div className="total">

@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { Cart, Container } from "./styles";
 import { useCart } from "../../hooks/useCart";
-// import shoppingCart from "../../assets/cart.svg";
 
 export const Header = () => {
   const { cart } = useCart();
@@ -15,7 +14,7 @@ export const Header = () => {
       <Cart to="/cart">
         <div>
           <strong>Meu Carrinho</strong>
-          <span data-testid="cart-size">
+          <span>
             {cartSize === 1 ? `${cartSize} item` : `${cartSize} items`}
           </span>
         </div>

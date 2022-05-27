@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { Product } from "../../components/Product";
-import { useCart } from "../../hooks/useCart";
 import { api } from "../../services/api";
 import { Container, Content } from "./styles";
 
@@ -12,7 +11,6 @@ interface ProductsProps {
 }
 
 export const ProductListing = () => {
-  const { addProduct, removeProduct } = useCart();
   const [products, setProducts] = useState<ProductsProps[]>();
 
   useEffect(() => {
@@ -20,7 +18,6 @@ export const ProductListing = () => {
       const response = await api.get("/items");
 
       setProducts(response.data);
-      console.log(response);
     };
 
     loadProducts();
@@ -36,8 +33,6 @@ export const ProductListing = () => {
             title={product.title}
             price={product.price}
             image={product.image}
-            addProductToCart={addProduct}
-            removeFromCart={removeProduct}
           />
         ))}
       </Content>

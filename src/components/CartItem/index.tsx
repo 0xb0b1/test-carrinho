@@ -1,4 +1,3 @@
-import { useCart } from "../../hooks/useCart";
 import { formatCurrency } from "../../utils/formatCurrency";
 import { ProductQuantity } from "../ProductQuantity";
 import { Container, Content } from "./styles";
@@ -18,12 +17,6 @@ export const CartItem = ({
   image,
   quantity,
 }: CartItemProps) => {
-  const { removeProduct, addProduct } = useCart();
-
-  const handleRemoveFromCart = (productId: number) => {
-    removeProduct(productId);
-  };
-
   const formattedPrice = formatCurrency(price);
   const totalProductPrice = formatCurrency(price * quantity);
 
