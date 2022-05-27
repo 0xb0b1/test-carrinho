@@ -6,7 +6,7 @@ export const Container = styled.div`
   justify-content: space-between;
   width: 100%;
 
-  height: 200px;
+  height: 180px;
 
   padding: 0.45rem;
 
@@ -50,12 +50,12 @@ export const Content = styled.div`
   }
 
   .image {
-    max-width: 140px;
+    max-width: 100px;
     width: 100%;
     height: 100%;
 
     img {
-      max-width: 120px;
+      max-width: 100px;
 
       border-radius: 1rem;
 
