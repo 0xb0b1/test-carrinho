@@ -39,13 +39,14 @@ export const Content = styled.div`
   width: 100%;
 
   .image {
-    max-width: 80px;
+    max-width: 100px;
 
     img {
       max-width: 80px;
-      width: auto;
+      min-width: 80px;
+      width: 100%;
       height: auto;
-      object-fit: cover;
+      /* object-fit: cover; */
 
       border: 1px solid #d3d3d3;
       border-radius: 1rem;
