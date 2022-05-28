@@ -1,6 +1,5 @@
 import { useCart } from "../../hooks/useCart";
 import { Button } from "./styles";
-import { FiTrash } from "react-icons/fi";
 
 interface ProductQuantityProps {
   id: number;
@@ -45,9 +44,9 @@ export const ProductQuantity = ({ id }: ProductQuantityProps) => {
               <span className="increment">+</span>
             </button>
           </label>
-          <span>
+          {/* <span>
             <FiTrash onClick={() => removeProduct(id)} color="#000" size={20} />
-          </span>
+          </span> */}
         </div>
       </Button>
     );

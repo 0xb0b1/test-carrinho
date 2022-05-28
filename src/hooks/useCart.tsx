@@ -68,7 +68,8 @@ export const CartProvider = ({ children }: CartProviderProps) => {
 
     if (action === "decrement") {
       if (productQuantity === 1) {
-        toast.error("Erro ao alterar quantidade", toastConfig);
+        removeProduct(productId);
+        // toast.warning("Produto removido do carrinho", toastConfig);
         return;
       }
 
