@@ -24,7 +24,7 @@ export const CartItem = ({
     <Container>
       <Content>
         <section className="image">
-          <img src={image} alt={title} />
+          <img src={image} alt={title} width="80" height="100%" />
         </section>
 
         <section className="product-details">
