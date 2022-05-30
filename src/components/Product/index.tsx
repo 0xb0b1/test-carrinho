@@ -16,7 +16,7 @@ export const Product = ({ title, price, image, id }: ProductProps) => {
     <Container>
       <Content>
         <section className="image">
-          <img src={image} alt={title} />
+          <img src={image} alt={title} loading="lazy" />
         </section>
         <section>
           <span className="name">{title}</span>
