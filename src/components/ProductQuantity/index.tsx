@@ -9,7 +9,7 @@ export const ProductQuantity = ({ id }: ProductQuantityProps) => {
   const {
     cart,
     addProduct,
-    removeProduct,
+    // removeProduct,
     productAlreadyInCart,
     updateProductQuantity,
     handleQuantity,
