@@ -46,7 +46,7 @@ export const Content = styled.div`
       min-width: 80px;
       width: 100%;
       height: auto;
-      /* object-fit: cover; */
+      object-fit: cover;
 
       border: 1px solid #d3d3d3;
       border-radius: 1rem;
