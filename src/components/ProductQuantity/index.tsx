@@ -9,7 +9,7 @@ export const ProductQuantity = ({ id }: ProductQuantityProps) => {
   const {
     cart,
     addProduct,
-    // removeProduct,
+    removeProduct,
     productAlreadyInCart,
     updateProductQuantity,
     handleQuantity,
@@ -44,9 +44,11 @@ export const ProductQuantity = ({ id }: ProductQuantityProps) => {
               <span className="increment">+</span>
             </button>
           </label>
-          {/* <span>
-            <FiTrash onClick={() => removeProduct(id)} color="#000" size={20} />
-          </span> */}
+          <span>
+            <button onClick={() => removeProduct(id)} color="#000">
+              Remove
+            </button>
+          </span>
         </div>
       </Button>
     );
