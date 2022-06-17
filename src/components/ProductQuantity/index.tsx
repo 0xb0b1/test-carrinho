@@ -45,9 +45,7 @@ export const ProductQuantity = ({ id }: ProductQuantityProps) => {
             </button>
           </label>
           <span>
-            <button onClick={() => removeProduct(id)} color="#000">
-              Remove
-            </button>
+            <button onClick={() => removeProduct(id)} color="#000"></button>
           </span>
         </div>
       </Button>
