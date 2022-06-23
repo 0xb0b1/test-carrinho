@@ -5,6 +5,7 @@ import { useCart } from "../../hooks/useCart";
 export const Header = () => {
   const { cart } = useCart();
   const cartSize = cart.length;
+
   return (
     <Container>
       <Link to="/">
